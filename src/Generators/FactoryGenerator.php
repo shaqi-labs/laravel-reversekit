@@ -87,63 +87,80 @@ class FactoryGenerator extends BaseGenerator
      */
     protected function getFakerMethod(string $fieldName, array $field): string
     {
-        // Check for foreign keys
+        // Check for foreign keys first
         if (str_ends_with($fieldName, '_id')) {
-            $relatedModel = ucfirst($this->relationshipDetector->singularize(str_replace('_id', '', $fieldName)));
-            return "\\{$this->getNamespace('Models')}\\{$relatedModel}::factory()";
+            return $this->getForeignKeyFaker($fieldName);
         }
 
         // Check field name patterns
-        if (str_contains($fieldName, 'email')) {
-            return 'fake()->unique()->safeEmail()';
-        }
-
-        if (str_contains($fieldName, 'name') || $fieldName === 'name') {
-            return 'fake()->name()';
-        }
-
-        if (str_contains($fieldName, 'title')) {
-            return 'fake()->sentence()';
-        }
-
-        if (str_contains($fieldName, 'body') || str_contains($fieldName, 'content') || str_contains($fieldName, 'description')) {
-            return 'fake()->paragraphs(3, true)';
-        }
-
-        if (str_contains($fieldName, 'url') || str_contains($fieldName, 'link')) {
-            return 'fake()->url()';
-        }
-
-        if (str_contains($fieldName, 'phone')) {
-            return 'fake()->phoneNumber()';
-        }
-
-        if (str_contains($fieldName, 'address')) {
-            return 'fake()->address()';
-        }
-
-        if (str_contains($fieldName, 'city')) {
-            return 'fake()->city()';
-        }
-
-        if (str_contains($fieldName, 'country')) {
-            return 'fake()->country()';
-        }
-
-        if (str_contains($fieldName, 'zip') || str_contains($fieldName, 'postal')) {
-            return 'fake()->postcode()';
-        }
-
-        if (str_contains($fieldName, 'image') || str_contains($fieldName, 'avatar') || str_contains($fieldName, 'photo')) {
-            return 'fake()->imageUrl()';
-        }
-
-        if (str_contains($fieldName, 'password')) {
-            return 'bcrypt(\'password\')';
+        $patternMethod = $this->getFakerByFieldName($fieldName);
+        if ($patternMethod !== null) {
+            return $patternMethod;
         }
 
         // Fallback to type-based methods
+        return $this->getFakerByType($field);
+    }
+
+    /**
+     * Get Faker method for foreign key fields.
+     */
+    protected function getForeignKeyFaker(string $fieldName): string
+    {
+        $relatedModel = ucfirst($this->relationshipDetector->singularize(str_replace('_id', '', $fieldName)));
+        return "\\{$this->getNamespace('Models')}\\{$relatedModel}::factory()";
+    }
+
+    /**
+     * Get Faker method based on field name patterns.
+     */
+    protected function getFakerByFieldName(string $fieldName): ?string
+    {
+        $patterns = $this->getFieldNamePatterns();
+
+        foreach ($patterns as $pattern => $fakerMethod) {
+            if (str_contains($fieldName, $pattern) || $fieldName === $pattern) {
+                return $fakerMethod;
+            }
+        }
+
+        return null;
+    }
+
+    /**
+     * Field name to Faker method mapping.
+     */
+    protected function getFieldNamePatterns(): array
+    {
+        return [
+            'email' => 'fake()->unique()->safeEmail()',
+            'name' => 'fake()->name()',
+            'title' => 'fake()->sentence()',
+            'body' => 'fake()->paragraphs(3, true)',
+            'content' => 'fake()->paragraphs(3, true)',
+            'description' => 'fake()->paragraphs(3, true)',
+            'url' => 'fake()->url()',
+            'link' => 'fake()->url()',
+            'phone' => 'fake()->phoneNumber()',
+            'address' => 'fake()->address()',
+            'city' => 'fake()->city()',
+            'country' => 'fake()->country()',
+            'zip' => 'fake()->postcode()',
+            'postal' => 'fake()->postcode()',
+            'image' => 'fake()->imageUrl()',
+            'avatar' => 'fake()->imageUrl()',
+            'photo' => 'fake()->imageUrl()',
+            'password' => 'bcrypt(\'password\')',
+        ];
+    }
+
+    /**
+     * Get Faker method based on PHP type.
+     */
+    protected function getFakerByType(array $field): string
+    {
         $phpType = $field['phpType'] ?? $field['php_type'] ?? 'string';
+
         return match ($phpType) {
             'int', 'integer' => 'fake()->numberBetween(1, 1000)',
             'float' => 'fake()->randomFloat(2, 1, 1000)',

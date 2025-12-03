@@ -247,7 +247,8 @@ class ReverseGenerateCommand extends Command
         DatabaseParser $databaseParser
     ): array {
         // Check for --from-url option
-        if ($url = $this->option('from-url')) {
+        $url = $this->option('from-url');
+        if ($url) {
             $this->info("📡 Fetching from API URL: {$url}");
             $authToken = $this->option('auth-token');
 
@@ -259,13 +260,15 @@ class ReverseGenerateCommand extends Command
         }
 
         // Check for --from-openapi option
-        if ($openApiFile = $this->option('from-openapi')) {
+        $openApiFile = $this->option('from-openapi');
+        if ($openApiFile) {
             $this->info("📄 Parsing OpenAPI specification: {$openApiFile}");
             return $openApiParser->parse($openApiFile);
         }
 
         // Check for --from-postman option
-        if ($postmanFile = $this->option('from-postman')) {
+        $postmanFile = $this->option('from-postman');
+        if ($postmanFile) {
             $this->info("📮 Parsing Postman collection: {$postmanFile}");
             return $postmanParser->parse($postmanFile);
         }
