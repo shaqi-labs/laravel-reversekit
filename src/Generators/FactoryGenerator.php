@@ -265,4 +265,3 @@ PHP;
         return database_path('factories/' . $className . '.php');
     }
 }
-
