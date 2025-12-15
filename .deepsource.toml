@@ -1,7 +1,0 @@
-version = 1
-
-[[analyzers]]
-name = "php"
-
-[[code_formatters]]
-name = "php-cs-fixer"
