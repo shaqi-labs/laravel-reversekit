@@ -44,7 +44,7 @@ It’s perfect for:
 ## 💾 Installation
 
 ```bash
-composer require shaqilabs/laravel-reversekit
+composer require shaqi-labs/laravel-reversekit
 ```
 
 Auto-discovery registers the service provider.
