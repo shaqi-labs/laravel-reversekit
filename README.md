@@ -46,6 +46,7 @@ It’s perfect for:
 ```bash
 composer require shaqi-labs/laravel-reversekit
 ```
+> Note: GitHub username has changed, but the Packagist package name remains the same.
 
 Auto-discovery registers the service provider.
 Optional publishing:
