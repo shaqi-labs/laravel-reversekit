@@ -29,18 +29,18 @@
     },
     "autoload": {
         "psr-4": {
-            "Shaqi\\ReverseKit\\": "src/"
+            "ShaqiLabs\\ReverseKit\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Shaqi\\ReverseKit\\Tests\\": "tests/"
+            "ShaqiLabs\\ReverseKit\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Shaqi\\ReverseKit\\ReverseKitServiceProvider"
+                "ShaqiLabs\\ReverseKit\\ReverseKitServiceProvider"
             ]
         }
     },

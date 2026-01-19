@@ -2,28 +2,28 @@
 
 declare(strict_types=1);
 
-namespace Shaqi\ReverseKit;
+namespace ShaqiLabs\ReverseKit;
 
 use Illuminate\Support\ServiceProvider;
-use Shaqi\ReverseKit\Commands\ReverseGenerateCommand;
-use Shaqi\ReverseKit\Commands\ReverseInteractiveCommand;
-use Shaqi\ReverseKit\Generators\ControllerGenerator;
-use Shaqi\ReverseKit\Generators\FactoryGenerator;
-use Shaqi\ReverseKit\Generators\FormRequestGenerator;
-use Shaqi\ReverseKit\Generators\MigrationGenerator;
-use Shaqi\ReverseKit\Generators\ModelGenerator;
-use Shaqi\ReverseKit\Generators\PolicyGenerator;
-use Shaqi\ReverseKit\Generators\ResourceGenerator;
-use Shaqi\ReverseKit\Generators\RouteGenerator;
-use Shaqi\ReverseKit\Generators\SeederGenerator;
-use Shaqi\ReverseKit\Generators\TestGenerator;
-use Shaqi\ReverseKit\Parsers\ApiUrlParser;
-use Shaqi\ReverseKit\Parsers\DatabaseParser;
-use Shaqi\ReverseKit\Parsers\JsonParser;
-use Shaqi\ReverseKit\Parsers\OpenApiParser;
-use Shaqi\ReverseKit\Parsers\PostmanParser;
-use Shaqi\ReverseKit\Support\RelationshipDetector;
-use Shaqi\ReverseKit\Support\TypeInferrer;
+use ShaqiLabs\ReverseKit\Commands\ReverseGenerateCommand;
+use ShaqiLabs\ReverseKit\Commands\ReverseInteractiveCommand;
+use ShaqiLabs\ReverseKit\Generators\ControllerGenerator;
+use ShaqiLabs\ReverseKit\Generators\FactoryGenerator;
+use ShaqiLabs\ReverseKit\Generators\FormRequestGenerator;
+use ShaqiLabs\ReverseKit\Generators\MigrationGenerator;
+use ShaqiLabs\ReverseKit\Generators\ModelGenerator;
+use ShaqiLabs\ReverseKit\Generators\PolicyGenerator;
+use ShaqiLabs\ReverseKit\Generators\ResourceGenerator;
+use ShaqiLabs\ReverseKit\Generators\RouteGenerator;
+use ShaqiLabs\ReverseKit\Generators\SeederGenerator;
+use ShaqiLabs\ReverseKit\Generators\TestGenerator;
+use ShaqiLabs\ReverseKit\Parsers\ApiUrlParser;
+use ShaqiLabs\ReverseKit\Parsers\DatabaseParser;
+use ShaqiLabs\ReverseKit\Parsers\JsonParser;
+use ShaqiLabs\ReverseKit\Parsers\OpenApiParser;
+use ShaqiLabs\ReverseKit\Parsers\PostmanParser;
+use ShaqiLabs\ReverseKit\Support\RelationshipDetector;
+use ShaqiLabs\ReverseKit\Support\TypeInferrer;
 
 class ReverseKitServiceProvider extends ServiceProvider
 {

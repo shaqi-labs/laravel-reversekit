@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Shaqi\ReverseKit\Parsers;
+namespace ShaqiLabs\ReverseKit\Parsers;
 
 use Illuminate\Support\Facades\Http;
 use InvalidArgumentException;
-use Shaqi\ReverseKit\Contracts\ParserInterface;
+use ShaqiLabs\ReverseKit\Contracts\ParserInterface;
 
 class ApiUrlParser implements ParserInterface
 {

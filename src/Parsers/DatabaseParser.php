@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Shaqi\ReverseKit\Parsers;
+namespace ShaqiLabs\ReverseKit\Parsers;
 
 use Illuminate\Support\Facades\Schema;
 use InvalidArgumentException;
-use Shaqi\ReverseKit\Contracts\ParserInterface;
-use Shaqi\ReverseKit\Support\RelationshipDetector;
+use ShaqiLabs\ReverseKit\Contracts\ParserInterface;
+use ShaqiLabs\ReverseKit\Support\RelationshipDetector;
 
 class DatabaseParser implements ParserInterface
 {

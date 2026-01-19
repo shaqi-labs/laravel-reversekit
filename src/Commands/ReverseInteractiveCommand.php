@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace Shaqi\ReverseKit\Commands;
+namespace ShaqiLabs\ReverseKit\Commands;
 
 use Illuminate\Console\Command;
-use Shaqi\ReverseKit\Generators\ControllerGenerator;
-use Shaqi\ReverseKit\Generators\FactoryGenerator;
-use Shaqi\ReverseKit\Generators\FormRequestGenerator;
-use Shaqi\ReverseKit\Generators\MigrationGenerator;
-use Shaqi\ReverseKit\Generators\ModelGenerator;
-use Shaqi\ReverseKit\Generators\PolicyGenerator;
-use Shaqi\ReverseKit\Generators\ResourceGenerator;
-use Shaqi\ReverseKit\Generators\RouteGenerator;
-use Shaqi\ReverseKit\Generators\SeederGenerator;
-use Shaqi\ReverseKit\Generators\TestGenerator;
-use Shaqi\ReverseKit\Support\RelationshipDetector;
+use ShaqiLabs\ReverseKit\Generators\ControllerGenerator;
+use ShaqiLabs\ReverseKit\Generators\FactoryGenerator;
+use ShaqiLabs\ReverseKit\Generators\FormRequestGenerator;
+use ShaqiLabs\ReverseKit\Generators\MigrationGenerator;
+use ShaqiLabs\ReverseKit\Generators\ModelGenerator;
+use ShaqiLabs\ReverseKit\Generators\PolicyGenerator;
+use ShaqiLabs\ReverseKit\Generators\ResourceGenerator;
+use ShaqiLabs\ReverseKit\Generators\RouteGenerator;
+use ShaqiLabs\ReverseKit\Generators\SeederGenerator;
+use ShaqiLabs\ReverseKit\Generators\TestGenerator;
+use ShaqiLabs\ReverseKit\Support\RelationshipDetector;
 
 use function Laravel\Prompts\confirm;
 use function Laravel\Prompts\multiselect;

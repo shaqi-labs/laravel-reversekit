@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Shaqi\ReverseKit\Generators;
+namespace ShaqiLabs\ReverseKit\Generators;
 
 use Illuminate\Filesystem\Filesystem;
-use Shaqi\ReverseKit\Support\RelationshipDetector;
+use ShaqiLabs\ReverseKit\Support\RelationshipDetector;
 
 abstract class BaseGenerator
 {
@@ -18,7 +18,7 @@ abstract class BaseGenerator
     {
         $this->filesystem = new Filesystem();
         $this->relationshipDetector = new RelationshipDetector(
-            new \Shaqi\ReverseKit\Support\TypeInferrer()
+            new \ShaqiLabs\ReverseKit\Support\TypeInferrer()
         );
     }
 

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Shaqi\ReverseKit\Parsers;
+namespace ShaqiLabs\ReverseKit\Parsers;
 
 use InvalidArgumentException;
-use Shaqi\ReverseKit\Support\RelationshipDetector;
-use Shaqi\ReverseKit\Support\TypeInferrer;
+use ShaqiLabs\ReverseKit\Support\RelationshipDetector;
+use ShaqiLabs\ReverseKit\Support\TypeInferrer;
 
 class JsonParser
 {

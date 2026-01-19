@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Shaqi\ReverseKit\Contracts;
+namespace ShaqiLabs\ReverseKit\Contracts;
 
 interface ParserInterface
 {

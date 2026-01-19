@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Shaqi\ReverseKit\Generators;
+namespace ShaqiLabs\ReverseKit\Generators;
 
 class ControllerGenerator extends BaseGenerator
 {

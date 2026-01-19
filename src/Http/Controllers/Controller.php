@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Shaqi\ReverseKit\Http\Controllers;
+namespace ShaqiLabs\ReverseKit\Http\Controllers;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;

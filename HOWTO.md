@@ -326,7 +326,7 @@ A: Yes! Use `--module=Blog` or `--namespace=Domain\\Blog`.
 
 ## 🔗 Links
 
-- **GitHub:** [github.com/shaqi-labs/laravel-reversekit](https://github.com/shaqi-labs/laravel-reversekit)
+- **GitHub:** [github.com/shaqilabs/laravel-reversekit](https://github.com/shaqilabs/laravel-reversekit)
 - **Packagist:** [packagist.org/packages/shaqi-labs/laravel-reversekit](https://packagist.org/packages/shaqi-labs/laravel-reversekit)
 
 ---

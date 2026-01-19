@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Shaqi\ReverseKit\Support;
+namespace ShaqiLabs\ReverseKit\Support;
 
 class RelationshipDetector
 {
